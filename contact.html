@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — M Faizal Faiz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --accent: #ef5649;
+        --bg: #fffefb;
+        --surface: #ffffff;
+        --muted: #6b7280;
+        --radius: 12px;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: #111;
+        line-height: 1.7;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header */
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .header-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .brand a {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      .brand .dot {
+        color: var(--accent);
+      }
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .nav a:hover,
+      .nav a.active {
+        background: #f3f4f6;
+        color: var(--accent);
+      }
+      .btn.ghost {
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .btn.ghost:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      /* === CONTACT SECTION === */
+      main {
+        padding: 3rem 0;
+      }
+      .contact-wrapper {
+        background: var(--surface);
+        padding: 2rem 3rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      p.subtitle {
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      label {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: var(--transition);
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(239, 86, 73, 0.1);
+      }
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      button:hover {
+        background: #ff7a6c;
+        transform: scale(1.02);
+      }
+
+      /* Contact info beside form */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .contact-info h3 {
+        margin-bottom: 0.5rem;
+      }
+      .info-item {
+        background: var(--bg);
+        padding: 1rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      /* Footer */
+      .site-footer {
+        margin-top: 60px;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+        padding: 2rem 0;
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .footer-grid a {
+        color: var(--accent);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+      .footer-grid a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 800px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="brand">
+          <a href="index.html">Faizal Faiz<span class="dot">.</span></a>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="works.html">Works</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="contact-wrapper">
+        <h1>Get in Touch</h1>
+        <p class="subtitle">
+          Let's connect! Whether you have a project, idea, or just want to say
+          hello.
+        </p>
+
+        <div class="contact-grid">
+          <form>
+            <div>
+              <label for="name">Nama</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Nama lengkap Anda"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Alamat email"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="message">Pesan</label>
+              <textarea
+                id="message"
+                placeholder="Tulis pesan Anda di sini..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Kirim Pesan</button>
+          </form>
+
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>Email</h3>
+              <p>mfaizalfaiz@example.com</p>
+            </div>
+            <div class="info-item">
+              <h3>Lokasi</h3>
+              <p>Tegal, Jawa Tengah, Indonesia</p>
+            </div>
+            <div class="info-item">
+              <h3>Media Sosial</h3>
+              <p>
+                <a href="#">Instagram</a> • <a href="#">Twitter</a> •
+                <a href="#">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> M Faizal Faiz — All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

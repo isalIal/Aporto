@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>M Faizal Faiz — Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === BASE STYLE - MODIFIED FOR STICKY FOOTER === */
+      :root {
+        --accent: #ef5649;
+        --muted: #6b7280;
+        --bg: #fffefb;
+        --radius: 12px;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      /* Kunci untuk Sticky Footer */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: #111;
+        line-height: 1.7;
+        /* Flexbox setup */
+        display: flex;
+        flex-direction: column;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* === HEADER === */
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .header-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .brand a {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      .brand .dot {
+        color: var(--accent);
+      }
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .nav a:hover,
+      .nav a.active {
+        background: #f3f4f6;
+        color: var(--accent);
+      }
+      .btn.ghost {
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .btn.ghost:hover {
+        background: var(--accent);
+        color: white;
+      }
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        font-size: 1.4rem;
+      }
+
+      /* === MAIN CONTENT === */
+      main {
+        padding: 2rem 0;
+        /* Kunci untuk Sticky Footer: mengambil ruang yang tersisa */
+        flex-grow: 1;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
+      }
+      .page-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem;
+      }
+      .page-header p {
+        color: var(--muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* === GRID ARTIKEL (Sama dengan articles-grid di index) === */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .article-card {
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      .article-card:hover {
+        transform: translateY(-5px);
+      }
+      .article-card img {
+        width: 100%;
+        height: 180px; /* Tinggi gambar sama dengan di index */
+        object-fit: cover;
+      }
+      .article-card .content {
+        padding: 1rem;
+      }
+      .article-card .content small {
+        display: block;
+        color: #d97706; /* Warna yang sama dengan small di hero index */
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+      }
+      .article-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+      }
+      .article-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* === FOOTER === */
+      .site-footer {
+        margin-top: 60px;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+        padding: 2rem 0;
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .footer-grid a {
+        color: var(--accent);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+      .footer-grid a:hover {
+        text-decoration: underline;
+      }
+
+      /* === RESPONSIVE === */
+      @media (max-width: 900px) {
+        .blog-grid {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="brand">
+          <a href="index.html">Faizal Faiz<span class="dot">.</span></a>
+        </div>
+
+        <nav class="nav" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="works.html">Works</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <h1>Latest Stories and Thoughts</h1>
+        <p>
+          Temukan tulisan terbaru tentang pengalaman, panduan, dan refleksi
+          pribadi. Semuanya bermula dari rasa ingin tahu.
+        </p>
+      </section>
+
+      <section class="articles">
+        <div class="blog-grid">
+          <article class="article-card">
+            <a href="#">
+              <img src="GAMBARBLOG1.jpg" alt="" />
+              <div class="content">
+                <small>Technology</small>
+                <h3>Memahami Dasar-Dasar CSS Grid untuk Layout Modern</h3>
+                <p>
+                  Panduan singkat tentang cara menggunakan CSS Grid dan
+                  manfaatnya dalam membangun tata letak halaman web yang
+                  kompleks.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a href="#">
+              <img src="GAMBARTUJUH.jpg" alt="" />
+              <div class="content">
+                <small>Life & Learning</small>
+                <h3>Refleksi Setahun: Pelajaran yang Saya Dapatkan</h3>
+                <p>
+                  Kumpulan poin-poin penting dan perubahan pola pikir setelah
+                  melalui satu tahun penuh tantangan dan pertumbuhan.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a href="#">
+              <img src="GAMBARBLOG3.jpg" alt="" />
+              <div class="content">
+                <small>Photography</small>
+                <h3>Tips Memotret Momen Cepat di Tengah Keramaian</h3>
+                <p>
+                  Teknik-teknik dan pengaturan kamera yang saya gunakan untuk
+                  mendapatkan bidikan tajam dalam kondisi *street photography*
+                  yang dinamis.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a href="#">
+              <img src="GAMBARBLOG4.jpg" alt="" />
+              <div class="content">
+                <small>Development</small>
+                <h3>Mengapa Vanilla JavaScript Masih Relevan di 2025</h3>
+                <p>
+                  Membahas kekuatan JavaScript murni, kapan harus
+                  menggunakannya, dan hubungannya dengan *framework* modern.
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> M Faizal Faiz — All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+/* === ISI DENGAN SEMUA CSS DARI INDEX.HTML ANDA DI SINI === */
+
+/* Contoh: */
+:root {
+  --accent: #ef5649;
+  /* ... dan semua variabel lainnya */
+}
+/* ... dan semua style yang ada di index.html */
+
+/* === TAMBAHAN STYLE UNTUK WORKS & CONTACT PAGE === */
+
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sub-heading {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* Style untuk tombol "View Project" di Works/Blog */
+.view-project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.view-project-link:hover {
+  text-decoration: underline;
+}
+
+/* Style untuk Halaman Kontak */
+.contact-section {
+  padding: 2rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(239, 86, 73, 0.1);
+}
+
+.btn.primary {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn.primary:hover {
+  background: #d64a3f; /* Sedikit lebih gelap dari accent */
+}
+
+.contact-info {
+  padding: 1rem;
+}
+.contact-info h3 {
+  margin-top: 0;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+.contact-list li {
+  margin-bottom: 1rem;
+}
+.contact-list a {
+  color: #111;
+  text-decoration: underline;
+}
+.contact-list a:hover {
+  color: var(--accent);
+}
+
+/* Responsif untuk Halaman Kontak */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

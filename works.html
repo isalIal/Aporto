@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>M Faizal Faiz — Works</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === BASE STYLE - MODIFIED FOR STICKY FOOTER === */
+      :root {
+        --accent: #ef5649;
+        --muted: #6b7280;
+        --bg: #fffefb;
+        --radius: 12px;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      /* Kunci untuk Sticky Footer */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: #111;
+        line-height: 1.7;
+        /* Flexbox setup */
+        display: flex;
+        flex-direction: column;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* === HEADER === */
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .header-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .brand a {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      .brand .dot {
+        color: var(--accent);
+      }
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .nav a:hover,
+      .nav a.active {
+        background: #f3f4f6;
+        color: var(--accent);
+      }
+      .btn.ghost {
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .btn.ghost:hover {
+        background: var(--accent);
+        color: white;
+      }
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        font-size: 1.4rem;
+      }
+
+      /* === MAIN CONTENT (Diperbarui untuk halaman Works) === */
+      main {
+        padding: 2rem 0;
+        /* Kunci untuk Sticky Footer: mengambil ruang yang tersisa */
+        flex-grow: 1;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
+      }
+      .page-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem;
+      }
+      .page-header p {
+        color: var(--muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .works-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .work-card {
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      .work-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .work-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      .work-card .content {
+        padding: 1.5rem;
+      }
+      .work-card .content small {
+        display: block;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+      }
+      .work-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.3rem;
+        line-height: 1.3;
+      }
+      .work-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      /* === FOOTER === */
+      .site-footer {
+        margin-top: 60px;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+        padding: 2rem 0;
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .footer-grid a {
+        color: var(--accent);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+      .footer-grid a:hover {
+        text-decoration: underline;
+      }
+
+      /* === RESPONSIVE === */
+      @media (max-width: 900px) {
+        .works-grid {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="brand">
+          <a href="index.html">Faizal Faiz<span class="dot">.</span></a>
+        </div>
+
+        <nav class="nav" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="works.html" class="active">Works</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <h1>My Creative Works</h1>
+        <p>
+          Kumpulan proyek dan karya terbaik yang telah saya selesaikan. Dari
+          desain web hingga fotografi, lihat apa yang telah saya bangun.
+        </p>
+      </section>
+
+      <section class="works">
+        <div class="works-grid">
+          <article class="work-card">
+            <a href="#">
+              <img src="GAMBARPROYEK1.jpg" alt="Project A" />
+              <div class="content">
+                <small>Web Design</small>
+                <h3>Landing Page Modern untuk Startup Edukasi</h3>
+                <p>
+                  Desain UI/UX lengkap untuk aplikasi pembelajaran dengan fokus
+                  pada pengalaman pengguna yang bersih dan intuitif.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#">
+              <img src="GAMBARPROYEK2.jpg" alt="Project B" />
+              <div class="content">
+                <small>Photography</small>
+                <h3>Seri Foto Dokumenter "Senja di Ibu Kota"</h3>
+                <p>
+                  Proyek fotografi yang menangkap kontras dan dinamika kehidupan
+                  di kota besar saat matahari terbenam.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#">
+              <img src="GAMBARPROYEK3.jpg" alt="Project C" />
+              <div class="content">
+                <small>Front-End Development</small>
+                <h3>Aplikasi To-Do List Berbasis React Sederhana</h3>
+                <p>
+                  Pengembangan aplikasi single-page dengan fokus pada
+                  performansi, menggunakan React dan Tailwind CSS.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="work-card">
+            <a href="#">
+              <img src="GAMBARPROYEK4.jpg" alt="Project D" />
+              <div class="content">
+                <small>Branding</small>
+                <h3>Desain Logo dan Identitas Visual Kafe Lokal</h3>
+                <p>
+                  Menciptakan identitas merek yang unik, mulai dari logo hingga
+                  panduan gaya visual untuk kafe yang baru dibuka.
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> M Faizal Faiz — All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

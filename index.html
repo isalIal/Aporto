@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>M Faizal Faiz — Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === BASE STYLE === */
+      :root {
+        --accent: #ef5649;
+        --muted: #6b7280;
+        --bg: #fffefb;
+        --radius: 12px;
+        --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: #111;
+        line-height: 1.7;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* === HEADER === */
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .header-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      .brand a {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      .brand .dot {
+        color: var(--accent);
+      }
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav a {
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .nav a:hover,
+      .nav a.active {
+        background: #f3f4f6;
+        color: var(--accent);
+      }
+      .btn.ghost {
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+      .btn.ghost:hover {
+        background: var(--accent);
+        color: white;
+      }
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        font-size: 1.4rem;
+      }
+
+      /* === HERO SECTION (GatesNotes Style) === */
+      main {
+        padding: 2rem 0;
+      }
+      .hero-news {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+      .hero-main {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero-main img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        object-fit: cover;
+      }
+      .hero-main small {
+        color: #d97706;
+        font-weight: 600;
+      }
+      .hero-main h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      .hero-main p {
+        color: #444;
+        max-width: 80%;
+      }
+
+      .hero-side {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .side-article {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 0.5rem;
+        transition: var(--transition);
+      }
+      .side-article:hover {
+        transform: translateY(-4px);
+      }
+      .side-article img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .side-article h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .side-article p {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      /* === GRID ARTIKEL BAWAH === */
+      .articles {
+        margin-top: 3rem;
+      }
+      .articles h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .articles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .article-card {
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      .article-card:hover {
+        transform: translateY(-5px);
+      }
+      .article-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+      .article-card .content {
+        padding: 1rem;
+      }
+      .article-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+      }
+      .article-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* === FOOTER === */
+      .site-footer {
+        margin-top: 60px;
+        background: #fafafa;
+        border-top: 1px solid #eee;
+        padding: 2rem 0;
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .footer-grid a {
+        color: var(--accent);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+      .footer-grid a:hover {
+        text-decoration: underline;
+      }
+
+      /* === RESPONSIVE === */
+      @media (max-width: 900px) {
+        .hero-news {
+          grid-template-columns: 1fr;
+        }
+        .hero-main p {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-grid">
+        <div class="brand">
+          <a href="index.html">Faizal Faiz<span class="dot">.</span></a>
+        </div>
+
+        <nav class="nav" id="main-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="works.html">Works</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===== HERO NEWS SECTION ===== -->
+      <section class="hero-news">
+        <div class="hero-main">
+          <img src="GAMBARSATU.jpg" alt="Hero Image" />
+          <small>FEATURED STORY</small>
+          <h1>Capturing an Unplanned Moment</h1>
+          <p>Sometimes, the unplanned ones mean the most.</p>
+          <p style="font-size: 0.9rem; color: #6b7280">
+            By M Faizal Faiz • October 2025
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <article class="side-article">
+            <img src="gambardelapan.png" alt="" />
+            <h3>Blooms and Beyond</h3>
+            <p>
+              More than just the blooms. In the silence of a rarely visited
+              path, we found a new moment to hold. With you, every detour is a
+              beautiful surprise.
+            </p>
+          </article>
+          <article class="side-article">
+            <img src="GAMBARTIGA.jpg" alt="" />
+            <h3>Light Finds Its Way In</h3>
+            <p>
+              Even in the quietest, darkest places, light finds a way to slip
+              through. It reminds us that no matter how deep we are, there’s
+              always something waiting to reach us softly, patiently.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== ARTICLE GRID SECTION ===== -->
+      <section class="articles">
+        <h2>Latest Articles</h2>
+        <div class="articles-grid">
+          <article class="article-card">
+            <img src="GAMBARLIMA.jpg" alt="" />
+            <div class="content">
+              <h3>A Day Drawn in Lines</h3>
+              <p>
+                She/He drew this after we had walked together all day from noon
+                until the city lights came on. It might just be ink on paper,
+                but for me, it's a memory frozen at the perfect time
+              </p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img src="GAMBAREMPAT.jpg" alt="" />
+            <div class="content">
+              <h3>TColors We Didn't Plan To Find</h3>
+              <p>
+                We weren't looking for anything special that day but somehow,
+                the flowers found us first.
+              </p>
+            </div>
+          </article>
+          <article class="article-card">
+            <img src="GAMBARTUJUH.jpg" alt="" />
+            <div class="content">
+              <h3>The First Chapter We Shared</h3>
+              <p>
+                My first year of college—lost among the bookshelves—but she/he
+                was there, helping me find more than just the pages.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> M Faizal Faiz — All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
